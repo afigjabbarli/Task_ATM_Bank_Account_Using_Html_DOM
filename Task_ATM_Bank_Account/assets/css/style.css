@@ -1,0 +1,72 @@
+*{
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+.tittle{
+    display: flex;
+    justify-content: center;
+}
+.tittle div{
+    margin-top: 70px;
+}
+h1:hover{
+    color: gray;
+    transform: scale(1.1);
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.coomand-list .row .col-6{
+    width: 45%;
+}
+.coomand-list .row .col-6 ul{
+    list-style-type: none;
+    
+   
+}
+.coomand-list .row .col-6 ul li{
+    height: 100px;
+    width: 100%;
+    background-color: #22226c;
+    margin-top: 50px;
+    border: 5px solid gray;
+    border-radius: 25px;
+ 
+}
+h2{
+    color: white;
+    font-size: 42px;
+}
+.coomand-list .row .col-6-right ul li{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.coomand-list .row .col-6-left ul li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.coomand-list .row .col-6-left ul li h2{
+  margin-left: 100px;
+}
+.coomand-list .row .col-6-right ul li h2{
+    margin-right: 100px;
+  }
+  .coomand-list .row .col-6-left ul li i{
+    margin-left: 25px;
+  }
+  .coomand-list .row .col-6-right ul li i{
+    margin-right: 25px;
+  }
+
+
+  .coomand-list .row .col-6 ul li:hover{
+    background-color: black;
+    transform: scale(1.1);
+    cursor: grab;
+  }
