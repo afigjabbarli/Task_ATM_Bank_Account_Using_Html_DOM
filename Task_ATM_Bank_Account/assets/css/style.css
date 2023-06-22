@@ -10,7 +10,7 @@
 .tittle div{
     margin-top: 70px;
 }
-h1:hover{
+.tittle h1:hover{
     color: gray;
     transform: scale(1.1);
 }
@@ -70,3 +70,26 @@ h2{
     transform: scale(1.1);
     cursor: grab;
   }
+  .Balance-none ul li{
+    border-radius: 25px;
+    border: 5px solid grey;
+    height: 100px;
+    background-color: black;
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .Balance-none ul{
+    width: 70%;
+    list-style-type: none;
+    margin: auto;
+}
+.Balance-none ul li h1{
+    color: white;
+}
+.Balance-none ul li i{
+    color: white;
+}
+    
+  
