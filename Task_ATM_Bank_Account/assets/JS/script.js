@@ -1,5 +1,5 @@
 
-const amount = 20000;
+let amount = 20000;
 const balanceElement = document.querySelector('.Balance-display');
 balanceElement.addEventListener('click', function(event) {
   
@@ -68,4 +68,18 @@ function currencyRates(amount, monetary){
     return balance
    }
 }
+
+const displayElement = document.querySelector('.Deposit-display')
+displayElement.addEventListener('click', function(element){
+  const container = document.querySelector('.container');
+  const tittle = document.querySelector('.tittle')
+  const displayBalance = document.querySelector('.Deposit-none')
+  const balansInfo = document.querySelector('.balance-info')
+  balansInfo.style.display = 'none';
+  displayBalance.style.display = 'block';
+  tittle.style.display = 'none';
+  container.style.display = 'none';
+  const body = document.querySelector('body')
+  body.style.backgroundColor = 'grey';
+})
 
