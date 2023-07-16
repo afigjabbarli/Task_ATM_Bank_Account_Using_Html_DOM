@@ -4,103 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./assets/css/style.css">
-    
     <script src="./assets/JS/script.js" defer></script>
-    <title>ATM</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+    
 </head>
 <body>
-    <header></header>
-    <main>
-        <div class="tittle">
-            <div><h1>Please Select The Transaction:</h1></div>
-        </div>
-        <div class="container coomand-list">
-          <div class="row">
-            <div class="col-6-left col-6">
-                <ul>
-                    <li>
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-flip-both fa-2xl" style="color: #ffffff;"></i>
-                        <h2>Account Information</h2>
-                    </li>
-                    <li>
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-flip-both fa-2xl" style="color: #ffffff;"></i>
-                        <h2>More Services</h2>
-                    </li>
-                    <li class="Deposit-display">
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-flip-both fa-2xl" style="color: #ffffff;"></i>
-                        <h2>Deposit</h2>
-                    </li>
-                    <li>
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-flip-both fa-2xl" style="color: #ffffff;"></i>
-                        <h2>Pin Change</h2>
-                    </li>
-                </ul>
+   <header></header>
+   <main>
+    <section>
+       <div class="container">
+        <div class="terminal col-6">
+            <h1 class="balance-title">Balans</h1>
+            <div class="container-balans">
+             <h1>10000</h1><span>AZN</span>
             </div>
-            <div class="col-6-right col-6">
-                <ul>
-                    <li class="Balance-display">
-                        <h2>Balance</h2>
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
-                    </li>
-                   
-                    <li>
-                        <h2>Withdrawal</h2>
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
-                    </li>
-                    <li>
-                        <h2>Fast Cash $100</h2>
-                        <i id="icon"class="fa-sharp fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
-                    </li>
-                    <li>
-                        <h2>Bill Payment</h2>
-                        <i id="icon" class="fa-sharp fa-solid fa-play fa-2xl" style="color: #ffffff;"></i>
-                    </li>
-                </ul>
+            <div class="Withdrawal terminal-command">
+                <i class="fa-solid fa-money-bill-transfer fa-2xl" style="color: #ff0000; font-size: 50px;"></i><h1>Withdrawal</h1> <i class="fa-solid fa-money-bill-transfer fa-2xl" style="color: #ff0000; font-size: 50px;"></i>
             </div>
-          </div>
-        </div>
-        <div style="display: none;" class="Balance-none">
-            <ul>
-                <li class="azn">
-                    <i class="fa-solid fa-manat-sign fa-2xl"></i>
-                    <h1>azn</h1>
-                </li>
-                <li class="lira">
-                    <i class="fa-solid fa-lira-sign fa-2xl"></i>
-                    <h1>lira</h1>
-                </li>
-                <li class="rubl">
-                    <i class="fa-solid fa-ruble-sign fa-2xl"></i>
-                    <h1>rubl</h1>
-                </li>
-                <li class="dollar">
-                    <i class="fa-solid fa-dollar-sign fa-2xl"></i>
-                    <h1>dollar</h1>
-                </li>
-                <li class="sterling">
-                    <i class="fa-solid fa-sterling-sign fa-2xl"></i>
-                    <h1>sterling</h1>
-                </li>
-                <li class="euro">
-                    <i class="fa-solid fa-euro-sign fa-2xl"></i>
-                    <h1>euro</h1>
-                </li>
-            </ul>
-        </div>
-        <div class="Deposit-none" style="display: none;">
-            <div class="input">
-                <label for="quantity">Please enter the amount(between 5 and 500):</label>
-            <input type="number" id="quantity" name="quantity" min="5" max="500">
-            <input type="submit" value="Confirm" class="confirm">
-             
+            <div class="Deposit terminal-command">
+               
+                    <i class="fa-solid fa-sack-dollar fa-2xl" style="color: #37ff00; margin-right: 45px; font-size: 60px;"></i> <h1>Deposit</h1> <i class="fa-solid fa-sack-dollar fa-2xl" style="color: #37ff00; margin-left: 45px; font-size: 60px;"></i>
+                
             </div>
-            <div class="balance-info">
-             
-                <h1>Text</h1>
+            <div class="Balance-info terminal-command">
+                <i class="fa-solid fa-coins fa-2xl" style="color: #fff700; font-size: 70px;"></i><h1>Balance Info</h1><i class="fa-solid fa-coins fa-2xl" style="color: #fff700; font-size: 70px;"></i>
             </div>
         </div>
-    </main>
-    <footer></footer>
+        <div class="command-list col-6">
+            <div class="col-12">
+                <div class="row"><input type="number" name="quantity" min="0" max="500" placeholder="please enter amount"  step="5" id="input" style="font-size: 36px; text-align: center;">
+                </div>
+                <div class="row"><button class="digit">1</button><button class="digit">2</button><button class="digit">3</button></div>
+                <div class="row"><button class="digit">4</button><button class="digit">5</button><button class="digit">6</button></div>
+                <div class="row"><button class="digit">7</button><button class="digit">8</button><button class="digit">9</button></div>
+                <div class="row"><button id="Delete">Delete</button><button class="digit">0</button><button id="Gancel">Gancel</button></div>
+                <div class="row"><button id="Confirm" style="width: 480px;">Confirm</button></div>
+            </div>
+        </div>
+        <div class="Currency-Rates" style="display: none;">
+            <div class="TUR currency"><h1></h1><span>TRY</span></div>
+            <div class="USA currency"><h1></h1><span>USD</span></div>
+            <div class="RUS currency"><h1></h1><span>RUB</span></div>
+            <div class="EUR currency"><h1></h1><span>EUR</span></div>
+            <div class="ENG currency"><h1></h1><span>GBP</span></div>
+        </div>
+       </div>
+    </section>
+   </main>
+   <footer></footer>
 </body>
 </html>

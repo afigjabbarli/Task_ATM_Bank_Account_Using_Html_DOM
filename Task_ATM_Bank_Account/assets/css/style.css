@@ -1,124 +1,167 @@
 *{
-    margin: 0%;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.tittle{
+.container{
+    width: 90%;
+    border: 1px solid black;
+    height: 800px;
+    margin: 50px auto;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
-.tittle div{
-    margin-top: 70px;
+.col-6{
+    width: 45%;
+    height: 700px;
+    border: 1px solid black;
 }
-.tittle h1:hover{
-    color: gray;
+.container-balans{
+    width: 90%;
+    height: 100px;
+    margin: 50px auto;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px 12px lightblue;
+    border-radius: 25px;
+    background-color: #cdc9c9;
+}
+.balance-title{
+    text-align: center;
+    font-size: 36px;
+    position: relative;
+    top: 30px;
+}
+.terminal-command{
+    height: 100px;
+    width: 90%;
+    margin: 50px auto;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px 12px lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+h1{
+    font-size: 36px;
+}
+.terminal-command:hover{
     transform: scale(1.1);
+    background-color: #cdc9c9;
+    cursor: pointer;
+}
+.number-buttons{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .row{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-}
-.coomand-list .row .col-6{
-    width: 45%;
-}
-.coomand-list .row .col-6 ul{
-    list-style-type: none;
-    
-   
-}
-.coomand-list .row .col-6 ul li{
-    height: 100px;
-    width: 100%;
-    background-color: #22226c;
-    margin-top: 50px;
-    border: 5px solid gray;
-    border-radius: 25px;
- 
-}
-h2{
-    color: white;
-    font-size: 42px;
-}
-.coomand-list .row .col-6-right ul li{
-    display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: space-evenly;
 }
-.coomand-list .row .col-6-left ul li{
+.container-balans{
     display: flex;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: center;
 }
-.coomand-list .row .col-6-left ul li h2{
-  margin-left: 100px;
-}
-.coomand-list .row .col-6-right ul li h2{
-    margin-right: 100px;
-  }
-  .coomand-list .row .col-6-left ul li i{
+.container-balans span{
     margin-left: 25px;
-  }
-  .coomand-list .row .col-6-right ul li i{
-    margin-right: 25px;
-  }
-
-
-  .coomand-list .row .col-6 ul li:hover{
-    background-color: black;
-    transform: scale(1.1);
-    cursor: grab;
-  }
-  .Balance-none ul li{
-    border-radius: 25px;
-    border: 5px solid grey;
-    height: 100px;
-    background-color: black;
-    margin-top: 22px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .Balance-none ul{
-    width: 70%;
-    list-style-type: none;
-    margin: auto;
-}
-.Balance-none ul li h1{
-    color: white;
-}
-.Balance-none ul li i{
-    color: white;
-}
-.Balance-none ul li:hover{
-    transform: scale(1.1);
-    
-}
-.Deposit-none .input label{
-    width: 250px;
+    font-size: 36px;
     font-weight: bold;
+}
+.command-list .col-12{
+    width: 100%;
+    padding: 30px;
+}
+.command-list .col-12 .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.command-list .col-12 .row button{
+    width: 160px;
+    height: 100px;
+    border-radius: 25px;
     font-size: 30px;
-    margin-left: 60px;
+    background-color: black;
+    color: white;
+    transition: 1s;
 }
-.Deposit-none .input input{
-    width: 360px;
-    height: 50px;
-  
+.command-list .col-12 .row #Confirm{
+    width: 480px;
+    background-color: #2aff2a;
 }
-.Deposit-none .input .confirm{
-    border-radius: 16px;
-    border: 3px solid black;
+.command-list .col-12 .row #Gancel{
+    background-color: red;
 }
-.Deposit-none .input #quantity{
-    width: 420px;
+.command-list .col-12 .row #Delete{
+    background-color: red;
+}
+.command-list .col-12 .row button:hover{
+    transform: scale(1.1);
+    background-color: gray;
+    transition: 1s;
+    cursor: pointer;
+}
+.command-list .col-12 .row .digit{
+    font-size: 40px;
     
 }
-.Deposit-none{
-   margin-top: 320px;
+#input{
+    width: 480px;
+    height: 100px;
+    border-radius: 25px;
+    margin-bottom: 36px;
 }
+::placeholder {
+    font-size: 25px;
+    text-align: center;
 
-
+  }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+ height: 50px;
+width: 50px;
+}
+.Currency-Rates{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    border: 1px solid black;
+    height: 90%;
+    width: 90%;
+    
+}
+.currency{
+    height: 100px;
+    width: 90%;
+    border-radius: 25px;
+    border: 5px solid black;
+    text-align: center;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+.currency h1, span{
+    font-size: 50px;
+    margin-left: 100px;
+}
+.currency:hover{
+    background-color: white;
+    transform: scale(1.1);
+}
+      
 
    
  

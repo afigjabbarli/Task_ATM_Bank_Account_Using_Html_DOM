@@ -1,85 +1,99 @@
+const showBalance = document.querySelector(".container .terminal .container-balans h1");
 
-let amount = 20000;
-const balanceElement = document.querySelector('.Balance-display');
-balanceElement.addEventListener('click', function(event) {
-  
-  event.preventDefault();
- 
-  const container = document.querySelector('.container');
-  const tittle = document.querySelector('.tittle')
-  const displayBalance = document.querySelector('.Balance-none')
-  displayBalance.style.display = 'flex';
-  tittle.style.display = 'none';
-  container.style.display = 'none';
-  const currencyLists = document.querySelectorAll(".Balance-none ul li h1")
-  currencyLists.forEach((liElements) => {
-    let content = liElements.textContent;
-    if(content === "azn"){
-      content = currencyRates(amount, "manat");
-      
-      liElements.innerHTML = content
-    }
-    if(content === "lira"){
-      content = currencyRates(amount, "lira")
-      liElements.innerHTML = content
-    }
-    if(content === "rubl"){
-      content = currencyRates(amount, "rubl")
-      liElements.innerHTML = content
-    }
-    if(content === "dollar"){
-      content = currencyRates(amount, "dollar")
-      liElements.innerHTML = content
-    }
-    if(content === "sterling"){
-      content = currencyRates(amount, "sterling")
-      liElements.innerHTML = content
-    }
-    if(content === "euro"){
-      content = currencyRates(amount, "avro")
-      liElements.innerHTML = content
-    }
-  })
-});
+const withdrawal = document.querySelector(".container .terminal .Withdrawal");
+const deposit = document.querySelector(".container .terminal .Deposit");
+const balance = document.querySelector(".container .terminal .Balance-info");
 
+const digits = document.querySelectorAll(".digit")
+const currencyRates = document.querySelector(".Currency-Rates")
 
-function currencyRates(amount, monetary){
-   if(monetary === "manat"){
-     return amount;
-   }
-   if(monetary === "lira"){
-     let balance = amount / 0.0874;
-     return balance;
-   }
-   if(monetary === "rubl"){
-    let balance = amount / 0.0209;
-    return balance;
-   }
-   if(monetary === "dollar"){
-    let balance = amount / 1.7;
-    return balance;
-   }
-   if(monetary === "sterling"){
-    let balance = amount / 2.1223;
-    return balance;
-   }
-   if(monetary === "avro"){
-    let balance = amount / 1.8726;
-    return balance
-   }
+const confirmValue= document.querySelector("#Confirm");
+const gancelValue = document.querySelector("#Gancel");
+const deleteValue = document.querySelector("#Delete");
+
+const commandList = document.querySelector(".command-list");
+const terminal = document.querySelector(".terminal");
+
+const currencies = document.querySelectorAll(".currency");
+
+const input = document.querySelector(".container .command-list .col-12 .row #input");
+
+const currencyList = document.querySelector(".Currency-Rates .TUR h1");
+const currencyList1 = document.querySelector(".Currency-Rates .USA h1");
+const currencyList2 = document.querySelector(".Currency-Rates .RUS h1");
+const currencyList3 = document.querySelector(".Currency-Rates .EUR h1");
+const currencyList4 = document.querySelector(".Currency-Rates .ENG h1");
+var amount = 0;
+class BalanceManagement{
+    static balance = 16000;
+    static IncreaseBalance(amount){
+         BalanceManagement.balance += amount;
+         return BalanceManagement.balance;
+    }
+    static DecreasedBalance(amount){
+        BalanceManagement.balance -= amount;
+        return BalanceManagement.balance;
+    }
+    static GetBalanceInfo(amount){
+        return BalanceManagement.balance;
+    }
 }
-
-const displayElement = document.querySelector('.Deposit-display')
-displayElement.addEventListener('click', function(element){
-  const container = document.querySelector('.container');
-  const tittle = document.querySelector('.tittle')
-  const displayBalance = document.querySelector('.Deposit-none')
-  const balansInfo = document.querySelector('.balance-info')
-  balansInfo.style.display = 'none';
-  displayBalance.style.display = 'block';
-  tittle.style.display = 'none';
-  container.style.display = 'none';
-  const body = document.querySelector('body')
-  body.style.backgroundColor = 'grey';
+showBalance.innerHTML = BalanceManagement.balance;
+digits.forEach((element) =>{
+    
+    element.addEventListener('click', function(){
+        
+        input.value += element.textContent;
+    })
+})
+confirmValue.addEventListener('click', function(){
+    amount = parseInt(input.value);
+})
+withdrawal.addEventListener('click', function(){
+    showBalance.innerHTML = BalanceManagement.DecreasedBalance(amount);
+})
+deposit.addEventListener('click', function(){
+    showBalance.innerHTML = BalanceManagement.IncreaseBalance(amount);
+})
+gancelValue.addEventListener("click", function(){
+    input.value = "";
+    amount = 0;
+})
+deleteValue.addEventListener('click', function(){
+    var str = input.value;
+    var lastChar = str.slice(0, str.length - 1);
+    input.value = lastChar;
 })
 
+balance.addEventListener('click', function(){
+     commandList.style.display = "none";
+     terminal.style.display = "none";
+     currencyRates.style.display = "flex";
+     currencyList.innerHTML = CurrencyRates(BalanceManagement.balance, "TUR");
+     currencyList1.innerHTML = CurrencyRates(BalanceManagement.balance, "USD");
+     currencyList2.innerHTML = CurrencyRates(BalanceManagement.balance, "RUB");
+     currencyList3.innerHTML = CurrencyRates(BalanceManagement.balance, "EUR");
+     currencyList4.innerHTML = CurrencyRates(BalanceManagement.balance, "GBP");
+})
+function CurrencyRates(amount, currency){
+    if(currency === "TUR"){
+        let result = amount / 0.0674;
+        return result;
+    }
+    if(currency === "RUB"){
+        let result = amount / 0.0201;
+        return result;
+    }
+    if(currency === "USD"){
+        let result = amount / 1.7;
+        return result;
+    }
+    if(currency === "EUR"){
+        let result = amount / 1.8521;
+        return result;
+    }
+    if(currency === "GBP"){
+        let result = amount / 2.1613;
+        return result;
+    }
+}
